@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blushora.co</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+overflow:hidden;
+
+/* BACKGROUND BARU */
+
+background:linear-gradient(
+135deg,
+#D14871,
+#E96A8F,
+#F7A1B9,
+#FFD1DE
+);
+
+background-size:400% 400%;
+animation:gradientMove 14s ease infinite;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* glow background */
+
+body::before,
+body::after{
+content:"";
+position:absolute;
+width:420px;
+height:420px;
+border-radius:50%;
+filter:blur(120px);
+opacity:0.6;
+}
+
+body::before{
+background:#D14871;
+top:-120px;
+left:-120px;
+}
+
+body::after{
+background:#F7A1B9;
+bottom:-120px;
+right:-120px;
+}
+
+/* CARD */
+
+.container{
+
+width:100%;
+max-width:420px;
+min-height:560px;
+
+padding:50px 30px;
+
+border-radius:34px;
+
+background:rgba(255,255,255,0.35);
+
+backdrop-filter:blur(35px);
+-webkit-backdrop-filter:blur(35px);
+
+border:1px solid rgba(255,255,255,0.7);
+
+box-shadow:
+0 25px 60px rgba(0,0,0,0.15),
+inset 0 1px 0 rgba(255,255,255,0.8);
+
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+
+animation:cardDrop 1.2s cubic-bezier(.22,1,.36,1);
+
+}
+
+@keyframes cardDrop{
+0%{
+opacity:0;
+transform:translateY(-120px);
+}
+100%{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* stagger animation */
+
+.fade-item{
+opacity:0;
+transform:translateY(-40px);
+animation:fadeDrop 1s ease forwards;
+}
+
+.fade1{ animation-delay:.6s }
+.fade2{ animation-delay:1s }
+.fade3{ animation-delay:1.4s }
+.fade4{ animation-delay:1.8s }
+.fade5{ animation-delay:2.2s }
+
+@keyframes fadeDrop{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* profile */
+
+.profile img{
+width:100px;
+height:100px;
+border-radius:50%;
+margin-bottom:16px;
+border:3px solid rgba(255,255,255,0.9);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.profile h1{
+font-size:24px;
+font-weight:600;
+color:#333;
+}
+
+.profile p{
+font-size:14px;
+color:#666;
+margin-top:6px;
+margin-bottom:36px;
+}
+
+/* BUTTON */
+
+.link-btn{
+
+width:100%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+
+text-decoration:none;
+
+margin:16px 0;
+padding:18px;
+
+border-radius:60px;
+
+font-size:16px;
+font-weight:500;
+
+color:#333;
+
+background:rgba(255,255,255,0.28);
+
+backdrop-filter:blur(25px);
+-webkit-backdrop-filter:blur(25px);
+
+border:1px solid rgba(255,255,255,0.7);
+
+box-shadow:
+0 12px 35px rgba(0,0,0,0.12),
+inset 0 1px 0 rgba(255,255,255,0.9);
+
+transition:all .25s ease;
+
+}
+
+.link-btn:hover{
+transform:scale(1.05);
+}
+
+.link-btn i{
+font-size:18px;
+}
+
+.whatsapp{
+color:#25D366;
+}
+
+.shopee{
+color:#ee4d2d;
+}
+
+footer{
+margin-top:35px;
+font-size:12px;
+color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="profile fade-item fade1">
+
+<img src="1.jpeg">
+
+<h1 class="fade-item fade2">Blushora.co</h1>
+
+<p class="fade-item fade3">Curated Thrift Clothing</p>
+
+</div>
+
+<a class="link-btn whatsapp fade-item fade4" href="https://wa.me/6285925280757" target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+WhatsApp
+
+</a>
+
+<a class="link-btn shopee fade-item fade5" href="https://shopee.co.id/dhanarsp?categoryId=100644&entryPoint=ShopByPDP&itemId=46605945696" target="_blank">
+
+<i class="fa-solid fa-bag-shopping"></i>
+
+Shopee
+
+</a>
+
+<footer class="fade-item fade5">
+© Blushora.co
+</footer>
+
+</div>
+
+</body>
+</html>
